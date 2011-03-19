@@ -4,7 +4,7 @@
 #
 
 [misc]
-        font                  = "terminus-6"
+        font                  = "Clean-6"
         raisefocus            = false
         raiseswitch           = false
         focus_follow_mouse    = true
@@ -20,7 +20,7 @@
 [/misc]
 
 [bar]
-        bg     = "#000000"
+        bg     = "#1c1c1c"
         fg     = "#c7b3d1"
         border = false
         #height = "-1"
@@ -41,7 +41,7 @@
 
         # Remove this section to disable the selbar.
         [selbar]
-                bg = "#000000"
+                bg = "#1c1c1c"
                 fg = "#b3d1b7"
 
                 # Cut title length
@@ -56,7 +56,7 @@
 
 [layouts]
   fg = "#d1b3b4"
-  bg = "#000000"
+  bg = "#1c1c1c"
 
   # Border around the layout button.
   border = false
@@ -134,22 +134,25 @@
         mouse_button_tag_prev      = "5"
 
         [tag]
-                name             = "\i[4;4;10;10;/home/ethan/.config/wmfs/icons/tags/term.png]\ "
-                screen           = 0
-                mwfact           = 0.65
-                nmaster          = 1
-                layout           = "tile_grid_vertical"
-                resizehint       = false
-                infobar_position = "top"
-                above_fc         = false
-                #[mouse] [/mouse] Possible multi mouse section
+            name             = "\i[4;4;11;8;/home/ethan/.config/wmfs/icons/tags/lives.png]\ "
+            screen           = 0
+            mwfact           = 0.65
+            nmaster          = 1
+            layout           = "tile_grid_vertical"
+            resizehint       = false
+            infobar_position = "top"
+            above_fc         = false
+            #[mouse] [/mouse] Possible multi mouse section
         [/tag]
-
-        # clients option is *DEPRECATED* but works, see [rules] section
-        [tag] name = "\i[5;5;8;8;/home/ethan/.config/wmfs/icons/tags/fox.png]\ " [/tag]
+        
         [tag] 
-                name   = "\i[5;5;8;8;/home/ethan/.config/wmfs/icons/tags/mouse_01.png]\ "   
-                layout = "free"
+            name   = "\i[5;5;11;8;/home/ethan/.config/wmfs/icons/tags/lives.png]\ "
+            layout = "max"
+        [/tag]
+        
+        [tag] 
+            name   = "\i[5;5;11;8;/home/ethan/.config/wmfs/icons/tags/lives.png]\ "   
+            layout = "free"
         [/tag]
 [/tags]
 
@@ -168,11 +171,11 @@
         client_auto_center   = false
         border_height        = 1
         border_shadow        = false
-        border_normal        = "#000000"
-        border_focus         = "#000000"
+        border_normal        = "#1c1c1c"
+        border_focus         = "#1c1c1c"
         place_at_mouse       = false
-        resize_corner_normal = "#d1d1b3"
-        resize_corner_focus  = "#97b4d0"
+        resize_corner_normal = "#1c1c1c"
+        resize_corner_focus  = "#1c1c1c"
         set_new_win_master   = true
         client_tile_raise    = false
         new_client_get_mouse = true
@@ -215,6 +218,16 @@
              ignore_tags   = false
              follow_client = false
         [/rule]
+        [rule]
+             instace       = "mtpaint"
+             class         = "Mtpaint"
+             tag           = 3
+             free          = false
+             max           = false
+             follow_client = false
+             ignore_tags   = false
+             follow_client = false
+         [/rule]
 [/rules]
 
 #[menu][/menu]
