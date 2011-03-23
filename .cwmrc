@@ -1,0 +1,21 @@
+# cwmrc
+
+# Set default Xft(3) font
+fontname "Envy Code R:medium:pixelsize=12"
+
+# Turn on sticky-group mode
+sticky yes
+
+# Any entry here is shown in the application menu
+command jumanji   jumanji
+command urxvt     urxvt
+
+# Autogroup definitions
+autogroup 2 "URxvt"
+autogroup 3 "jumanji"
+
+# Keybinds
+bind CM-Return "urxvt"
+bind M-1 grouponly1
+bind M-2 grouponly2
+bind M-3 grouponly3
