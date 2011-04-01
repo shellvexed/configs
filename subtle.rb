@@ -121,7 +121,7 @@ set :outline, 0
 icon = Subtlext::Icon.new("/home/ethan/.local/share/subtle/icons/arrow_right2.xbm")
 
 screen 1 do
-  top    [ :views, :title, :spacer, :keychain, :spacer, :tray, :sublets, :Mpd, icon, :volume, icon, :temp, icon, :memory, icon, :wifi, icon, :clock ]
+  top    [ :views, :title, :spacer, :keychain, :spacer, :tray, :sublets, :Mpd, icon, :volume, icon, :temp, icon, :memory, icon, :wifi, :battery, icon, :clock ]
   bottom [ ]
 end
 
@@ -188,7 +188,7 @@ color :client_inactive, "#202020"
 color :panel,           "#202020"
 
 # Background color of root background
-color :background,      "#3d3d3d"
+#color :background,      "#3d3d3d"
 
 # Color of the stipple (if enabled)
 color :stipple,         "#757575"
@@ -681,16 +681,16 @@ view "www" do
   dynamic true
 end
 
-view "dev" do
-  match     "editor"
-  icon      "/home/ethan/.local/share/subtle/icons/wrench.xbm"
+view "misc" do
+  match "default"
+  icon  "/home/ethan/.local/share/subtle/icons/shelf.xbm"
   icon_only true
   dynamic true
 end
 
-view "misc" do
-  match "default"
-  icon  "/home/ethan/.local/share/subtle/icons/shelf.xbm"
+view "dev" do
+  match     "editor"
+  icon      "/home/ethan/.local/share/subtle/icons/wrench.xbm"
   icon_only true
   dynamic true
 end
@@ -740,7 +740,7 @@ end
 sublet :wifi do
   interval      30
   icon_fg    "#b7ce42"
-  text_fg    "#66aabb"
+  text_fg    "#509ec6"
 end
 
 sublet :temp do
@@ -748,7 +748,7 @@ sublet :temp do
   show_name false
   monitors "acpitz"
   icon_fg "#b7ce42"
-  text_fg "#d81860"
+  text_fg "#66aabb"
 end
 
 sublet :mpd do
@@ -759,11 +759,17 @@ end
 sublet :memory do
   interval 10
   icon_fg    "#b7ce42"
-  text_fg    "#FEA63C"
+  text_fg    "#66aabb"
 end
 
 sublet :volume do
   icon_fg    "#b7ce42"
+end
+
+sublet :battery do
+  interval 10
+  icon_fg "#b7ce42"
+  text_fg "#66aabb"
 end
 #
 #  === Link
