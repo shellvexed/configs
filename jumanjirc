@@ -6,6 +6,9 @@ set auto_save 60
 # key bindings
 map <C-q> quit
 
+# font
+set font Consolas regular 9
+
 # Enable plugins
 plugin application/x-shockwave-flash
 
@@ -13,6 +16,9 @@ plugin application/x-shockwave-flash
 # Search engines
 searchengine g http://www.google.com/search?q=%s
 searchengine imdb http://www.imdb.com/find?s=all&q=%s
+
+# scripts
+script ~/.config/jumanji/scripts/hints.js
 
 # Downloads
 # set download_dir /home/ethan/downloads/
