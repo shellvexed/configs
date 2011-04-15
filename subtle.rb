@@ -56,8 +56,8 @@ set :resize, false
 set :strut, [ 0, 0, 0, 0 ]
 
 # Font string either take from e.g. xfontsel or use xft
-set :font, "xft:clean:pixelsize=10"
-#set :font, "xft:sans-8"
+#set :font, "xft:clean:pixelsize=10"
+set :font, "xft:DejaVu Sans Mono:pixelsize=10"
 
 # Space around windows
 set :gap, 0
@@ -430,7 +430,7 @@ grab "W-c", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 grab "W-Return", "urxvt"
 
 # Contrib
-grab "C-x" do
+grab "A-S-d" do
   Subtle::Contrib::Launcher.run
 end
 
@@ -731,10 +731,10 @@ end
 #
 
 sublet :clock do
-  interval      1
+  interval      30
   text_fg    "#d81860"
   icon_fg    "#b7ce42"
-  format_string "%H:%M:%S"
+  format_string  "%a %m/%d %H:%M"
 end
 
 sublet :wifi do
