@@ -755,7 +755,7 @@ end
 
 sublet :wifi do
   interval      30
-  text_fg "#d81860"
+  text_fg "#509ec6"
   icon_fg "#b7ce42"
 end
 
@@ -763,18 +763,18 @@ sublet :temp do
   interval 10
   show_name false
   monitors "acpitz"
-  text_fg "#d81860"
+  text_fg "#66aabb"
   icon_fg "#b7ce42"
 end
 
 sublet :mpd do
-  text_fg "#d81860"
+  text_fg "#66aabb"
   icon_fg "#b7ce42"
 end
 
 sublet :memory do
   interval 10
-  text_fg "#d81860"
+  text_fg "#66aabb"
   icon_fg "#b7ce42"
 end
 
@@ -784,7 +784,7 @@ end
 
 sublet :battery do
   interval 10
-  text_fg "#d81860"
+  text_fg "#66aabb"
   icon_fg "#b7ce42"
 end
 #
