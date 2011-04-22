@@ -14,30 +14,24 @@
 
 #
 # == Options
-require "socket"
+#
+# Following options change behaviour and sizes of the window manager:
+#
 
-# Contrib {{{
 begin
   require "#{ENV["HOME"]}/.subtle-contrib/ruby/launcher.rb"
-  require "#{ENV["HOME"]}/.subtle-contrib/ruby/selector.rb"
   require "#{ENV["HOME"]}/.subtle-contrib/ruby/merger.rb"
-  
+
   Subtle::Contrib::Launcher.fonts = [
     "xft:Envy Code R:pixelsize=80",
     "xft:Envy Code R:pixelsize=13"
   ]
-  
-  Subtle::Contrib::Selector.font = "xft:Envy Code R:pixelsize=13"
-  Subtle::Contrib::Merger.font   = "xft:Envy Code R:pixelsize=13"
+
+  Subtle::Contrib::Merger.font = "xft:Envy Code R:pixelsize=13"
 rescue LoadError
-end # }}}
+end
 
-# Following options change behaviour and sizes of the window manager:
-#
-# Border size in pixel of the windows
-set :border, 2
-
-# Window move/resize steps in pixel per keypress
+# Window move/resize steps in pixel per keypress 
 set :step, 5
 
 # Window screen border snapping
@@ -52,24 +46,12 @@ set :urgent, false
 # Honor resize size hints globally
 set :resize, false
 
-# Screen strut for e.g. other panels (left, right, top, bottom)
-set :strut, [ 0, 0, 0, 0 ]
-
 # Font string either take from e.g. xfontsel or use xft
-#set :font, "xft:clean:pixelsize=10"
-set :font, "xft:DejaVu Sans Mono:pixelsize=10"
-
-# Space around windows
-set :gap, 0
-
-# Panel size padding (left, right, top, bottom)
-set :padding, [ 0, 0, 0, 0 ]
+#set :font, "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*"
+set :font, "xft:clean:pixelsize=10"
 
 # Separator between sublets
-set :separator, "]["
-
-# Outline border size in pixel of panel items
-set :outline, 0
+set :separator, "|"
 
 # Set the WM_NAME of subtle (Java quirk)
 # set :wmname, "LG3D"
@@ -118,10 +100,11 @@ set :outline, 0
 # http://subforge.org/projects/subtle/wiki/Multihead
 # http://subforge.org/projects/subtle/wiki/Panel
 #
+
 icon = Subtlext::Icon.new("/home/ethan/.local/share/subtle/icons/arrow_right2.xbm")
 
 screen 1 do
-  top    [ :views, :title, :spacer, :keychain, :spacer, :tray, :sublets, :Mpd, icon, :volume, icon, :temp, icon, :memory, icon, :wifi, :battery, icon, :clock ]
+  top    [ :views, :title, :spacer, :keychain, :spacer, :mpd, icon, :volume, icon, :temp, icon,  :memory, icon, :wifi, icon, :clock, :tray, ]
   bottom [ ]
 end
 
@@ -132,69 +115,87 @@ end
 #end
 
 #
-# == Colors
+# == Styles
 #
-# Colors directly define the look of subtle, valid values are:
+# Styles define various properties of styleable items in a CSS-like syntax.
 #
-# [*hexadecimal*] #0000ff
-# [*decimal*]     (0, 0, 255)
-# [*names*]       blue
-#
-# Whenever there is no valid value for a color set - subtle will use a default
-# one. There is only one exception to this: If no background color is given no
-# color will be set. This will ensure a custom background pixmap won't be
-# overwritten.
+# If no background color is given no color will be set. This will ensure a
+# custom background pixmap won't be overwritten.
 #
 # === Link
 #
-# http://subforge.org/projects/subtle/wiki/Themes
+# http://subforge.org/projects/subtle/wiki/Styles
 
-# Colors of focus window title
-color :title_fg,        "#757575"
-color :title_bg,        "#202020"
-color :title_border,    "#303030"
+# Style for focus window title
+style :title do
+  padding     0, 0, 0, 0
+  border      "#303030", 0
+  foreground  "#fecf35"
+  background  "#202020"
+end
 
-# Colors of the active views
-color :focus_fg,        "#fecf35"
-color :focus_bg,        "#202020"
-color :focus_border,    "#303030"
+# Style for the active views
+style :focus do
+  padding     0, 0, 0, 0
+  border      "#303030", 0
+  foreground  "#fecf35"
+  background  "#202020"
+end
 
-# Colors of urgent window titles and views
-color :urgent_fg,       "#ff9800"
-color :urgent_bg,       "#202020"
-color :urgent_border,   "#303030"
+# Style for urgent window titles and views
+style :urgent do
+  padding     0, 0, 0, 0
+  border      "#303030", 0
+  foreground  "#ff9800"
+  background  "#202020"
+end
 
-# Colors of occupied views (views with clients)
-color :occupied_fg,     "#509ec6"
-#color :occupied_fg,     "#b8b8b8"
-color :occupied_bg,     "#202020"
-color :occupied_border, "#303030"
+# Style for occupied views (views with clients)
+style :occupied do
+  padding     0, 0, 0, 0
+  border      "#303030", 0
+  foreground  "#b8b8b8"
+  background  "#202020"
+end
 
-# Color of view buttons
-color :views_fg,        "#757575"
-color :views_bg,        "#202020"
-color :views_border,    "#303030"
+# Style for view buttons
+style :views do
+  padding     0, 0, 0, 0
+  border      "#303030", 0
+  foreground  "#757575"
+  background  "#202020"
+end
 
-# Colors of sublets
-color :sublets_fg,      "#757575"
-color :sublets_bg,      "#202020"
-color :sublets_border,  "#303030"
+# Style for sublets
+style :sublets do
+  padding     0, 0, 0, 0
+  border      "#303030", 0
+  foreground  "#757575"
+  background  "#202020"
+end
 
-# Border colors of active/inactive windows
-color :client_active,   "#303030"
-color :client_inactive, "#202020"
+# Style for separator
+style :separator do
+  padding     0, 0, 0, 0
+  border      0
+  background  "#202020"
+  foreground  "#757575"
+end
 
-# Background colors of panels
-color :panel,           "#202020"
+# Style for active/inactive windows
+style :clients do
+  active      "#303030", 2
+  inactive    "#202020", 2
+  margin      0
+end
 
-# Background color of root background
-#color :background,      "#3d3d3d"
-
-# Color of the stipple (if enabled)
-color :stipple,         "#757575"
-
-# Color of the separator
-color :separator,       "#757575"
+# Style for subtle
+style :subtle do
+  margin      0, 0, 0, 0
+  panel       "#202020"
+  background  "#3d3d3d"
+  stipple     "#757575"
+end
 
 #
 # == Gravities
@@ -386,7 +387,7 @@ grab "W-f", :WindowFloat
 grab "W-space", :WindowFull
 
 # Toggle sticky mode of window (will be visible on all views)
-grab "W-C-s", :WindowStick
+grab "W-s", :WindowStick
 
 # Raise window
 grab "W-r", :WindowRaise
@@ -421,7 +422,11 @@ grab "W-e", [ :top_right,    :top_right66,    :top_right33    ]
 grab "W-a", [ :left,         :left66,         :left33         ]
 grab "W-s", [ :center,       :center66,       :center33       ]
 grab "W-d", [ :right,        :right66,        :right33        ]
-grab "W-y", [ :bottom_left,  :bottom_left66,  :bottom_left33  ]
+#
+# QUERTZ
+#grab "W-y", [ :bottom_left,  :bottom_left66,  :bottom_left33  ]
+#
+# QWERTY
 grab "W-z", [ :bottom_left,  :bottom_left66,  :bottom_left33  ]
 grab "W-x", [ :bottom,       :bottom66,       :bottom33       ]
 grab "W-c", [ :bottom_right, :bottom_right66, :bottom_right33 ]
@@ -432,10 +437,6 @@ grab "W-Return", "urxvt"
 # Contrib
 grab "A-S-d" do
   Subtle::Contrib::Launcher.run
-end
-
-grab "C-z" do
-  Subtle::Contrib::Selector.run
 end
 
 grab "C-u" do
@@ -571,40 +572,57 @@ end
 #
 
 # Simple tags
-tag "terms",   "urxvt"
-tag "browser", "firefox|jumanji"
+tag "terms",   "xterm|[u]?rxvt"
+tag "browser", "uzbl|opera|firefox|navigator|jumanji"
+tag "editors", "emacs"
 
 # Placement
-#tag "editor" do
-#  match  "[g]?vim"
-#  resize true
-#end
+tag "editor" do
+  match  "[g]?vim"
+  resize true
+end
 
-#tag "fixed" do
-#  geometry [ 10, 10, 100, 100 ]
-#  stick    true
-#end
+tag "fixed" do
+  geometry [ 10, 10, 100, 100 ]
+  stick    true
+end
 
-#tag "resize" do
-#  match  "sakura|gvim"
-#  resize true
-#end
+tag "resize" do
+  match  "sakura|gvim"
+  resize true
+end
 
-#tag "gravity" do
-#  gravity :center
-#end
+tag "gravity" do
+  gravity :center
+end
 
 # Modes
-#tag "stick" do
-#  match "mplayer"
-#  float true
-#  stick true
-#end
+tag "stick" do
+  match "mplayer"
+  float true
+  stick true
+end
 
-#tag "float" do
-#  match "display"
-#  float true
-#end
+tag "float" do
+  match "display"
+  float true
+end
+
+# Gimp
+tag "gimp_image" do
+  match   :role => "gimp-image-window"
+  gravity :gimp_image
+end
+
+tag "gimp_toolbox" do
+  match   :role => "gimp-toolbox$"
+  gravity :gimp_toolbox
+end
+
+tag "gimp_dock" do
+  match   :role => "gimp-dock"
+  gravity :gimp_dock
+end
 
 #
 # == Views
@@ -668,32 +686,31 @@ tag "browser", "firefox|jumanji"
 #
 
 view "terms" do
-  match     "terms"
-  icon      "/home/ethan/.local/share/subtle/icons/terminal.xbm"
+  match "terms"
+  icon "/home/ethan/.local/share/subtle/icons/terminal.xbm"
   icon_only true
-  dynamic true
 end
 
 view "www" do
-  match     "browser"
-  icon      "/home/ethan/.local/share/subtle/icons/world.xbm"
+  match "browser"
+  icon "/home/ethan/.local/share/subtle/icons/world.xbm"
   icon_only true
-  dynamic true
+end
+
+view "dev" do
+  match "editors"
+  icon "/home/ethan/.local/share/subtle/icons/wrench.xbm"
+  icon_only true
 end
 
 view "misc" do
   match "default"
-  icon  "/home/ethan/.local/share/subtle/icons/shelf.xbm"
+  icon "/home/ethan/.local/share/subtle/icons/shelf.xbm"
   icon_only true
-  dynamic true
 end
 
-view "dev" do
-  match     "editor"
-  icon      "/home/ethan/.local/share/subtle/icons/wrench.xbm"
-  icon_only true
-  dynamic true
-end
+#view "gimp",  "gimp_.*"
+#view "dev",   "editor"
 
 #
 # == Sublets
@@ -729,47 +746,46 @@ end
 #
 # === Example
 #
-
 sublet :clock do
-  interval      30
-  text_fg    "#d81860"
-  icon_fg    "#b7ce42"
-  format_string  "%a %m/%d %H:%M"
+  interval      10
+  text_fg "#d81860"
+  icon_fg "#b7ce42"
+  format_string "%a %m/%d %H:%M"
 end
 
 sublet :wifi do
   interval      30
-  icon_fg    "#b7ce42"
-  text_fg    "#509ec6"
+  text_fg "#d81860"
+  icon_fg "#b7ce42"
 end
 
 sublet :temp do
-  interval 5
+  interval 10
   show_name false
   monitors "acpitz"
+  text_fg "#d81860"
   icon_fg "#b7ce42"
-  text_fg "#66aabb"
 end
 
 sublet :mpd do
-  icon_fg    "#b7ce42"
-  text_fg    "#66aabb"
+  text_fg "#d81860"
+  icon_fg "#b7ce42"
 end
 
 sublet :memory do
   interval 10
-  icon_fg    "#b7ce42"
-  text_fg    "#66aabb"
+  text_fg "#d81860"
+  icon_fg "#b7ce42"
 end
 
 sublet :volume do
-  icon_fg    "#b7ce42"
+  icon_fg "#b7ce42"
 end
 
 sublet :battery do
   interval 10
+  text_fg "#d81860"
   icon_fg "#b7ce42"
-  text_fg "#66aabb"
 end
 #
 #  === Link
@@ -806,9 +822,9 @@ end
 #
 # This hook will print the name of the window that gets the focus:
 #
-on :client_focus do |c|
-     puts c.name
-end
+#   on :client_focus do |c|
+#     puts c.name
+#   end
 #
 # === Link
 #
