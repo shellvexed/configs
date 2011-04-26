@@ -130,7 +130,7 @@ end
 style :title do
   padding     0, 0, 0, 0
   border      "#303030", 0
-  foreground  "#fecf35"
+  foreground  "#b8b8b8"
   background  "#202020"
 end
 
@@ -193,7 +193,7 @@ end
 style :subtle do
   margin      0, 0, 0, 0
   panel       "#202020"
-  background  "#3d3d3d"
+  #background  "#3d3d3d"
   stipple     "#757575"
 end
 
@@ -387,7 +387,7 @@ grab "W-f", :WindowFloat
 grab "W-space", :WindowFull
 
 # Toggle sticky mode of window (will be visible on all views)
-grab "W-s", :WindowStick
+grab "W-A-s", :WindowStick
 
 # Raise window
 grab "W-r", :WindowRaise
@@ -705,7 +705,7 @@ end
 
 view "misc" do
   match "default"
-  icon "/home/ethan/.local/share/subtle/icons/shelf.xbm"
+  icon "/home/ethan/.local/share/subtle/icons/trash.xbm"
   icon_only true
 end
 
@@ -755,7 +755,8 @@ end
 
 sublet :wifi do
   interval      30
-  text_fg "#509ec6"
+  #text_fg "#509ec6"
+  text_fg "#66aabb"
   icon_fg "#b7ce42"
 end
 

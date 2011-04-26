@@ -4,10 +4,10 @@
 
 !-[Font Rendering]-----
 Xft.dpi:          99
-!Xft.lcdfilter:		lcddefault
+Xft.lcdfilter:		lcdslight
 Xft.antialias:		true
 Xft.rgba:         rgb
-Xft.hinting:		true
+!Xft.hinting:		true
 !Xft.hintstyle:    hintslight
 
 !-[Fonts]----
@@ -19,12 +19,14 @@ Xft.hinting:		true
 !URxvt.boldFont:xft:ProggySmallTT:pixelsize=16
 !URxvt.font:xft:ProggyCleanTT:pixelsize=16
 !URxvt.boldFont:xft:ProggyCleanTT:pixelsize=16
-URxvt.font:xft:Inconsolata:hintstyle=hintslight:autohint=true:pixelsize=13
-URxvt.boldFont:xft:Inconsolata:hintstyle=hintslight:autohint=true:pixelsize=13
+!URxvt.font:xft:Inconsolata:hintstyle=hintslight:autohint=true:pixelsize=13
+!URxvt.boldFont:xft:Inconsolata:hintstyle=hintslight:autohint=true:pixelsize=13
 !URxvt.font:xft:Envy Code R:hintstyle=hintfull:pixelsize=12
 !URxvt.boldFont:xft:Envy Code R:hintstyle=hintfull:pixelsize=12
 !URxvt.font:xft:DejaVu Sans Mono:pixelsize=10.5
 !URxvt.boldFont:xft:DejaVu Sans Mono:pixelsize=10.5
+URxvt.font:xft:Tamsyn:pixelsize=14
+URxvt.boldFont:xft:Tamsyn:pixelsize=14
 
 !-[URxvt Settings]----
 URxvt.saveLines:	8192
