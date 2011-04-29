@@ -23,7 +23,7 @@ begin
   require "#{ENV["HOME"]}/.subtle-contrib/ruby/merger.rb"
 
   Subtle::Contrib::Launcher.fonts = [
-    "xft:Envy Code R:pixelsize=80",
+    "xft:Inconsolata:pixelsize=80",
     "xft:Envy Code R:pixelsize=13"
   ]
 
@@ -54,7 +54,7 @@ set :font, "xft:clean:pixelsize=10"
 set :separator, "|"
 
 # Set the WM_NAME of subtle (Java quirk)
-# set :wmname, "LG3D"
+set :wmname, "LG3D"
 
 #
 # == Screen
@@ -130,16 +130,19 @@ end
 style :title do
   padding     0, 0, 0, 0
   border      "#303030", 0
-  foreground  "#b8b8b8"
-  background  "#202020"
+  #foreground  "#b8b8b8"
+  foreground  "#22303d"
+  #background  "#202020"
+  background  "#f0f0f0"
 end
 
 # Style for the active views
 style :focus do
   padding     0, 0, 0, 0
-  border      "#303030", 0
-  foreground  "#fecf35"
-  background  "#202020"
+  border      "#757575", 0
+  #foreground  "#fecf35"
+  foreground  "#62aada"
+  background  "#f0f0f0"
 end
 
 # Style for urgent window titles and views
@@ -147,52 +150,54 @@ style :urgent do
   padding     0, 0, 0, 0
   border      "#303030", 0
   foreground  "#ff9800"
-  background  "#202020"
+  background  "#f0f0f0"
 end
 
 # Style for occupied views (views with clients)
 style :occupied do
   padding     0, 0, 0, 0
   border      "#303030", 0
-  foreground  "#b8b8b8"
-  background  "#202020"
+  #foreground  "#b8b8b8"
+  foreground  "#22303d"
+  background  "#f0f0f0"
 end
 
 # Style for view buttons
 style :views do
   padding     0, 0, 0, 0
   border      "#303030", 0
-  foreground  "#757575"
-  background  "#202020"
+  #foreground  "#757575"
+  foreground  "#b8b8b8"
+  background  "#f0f0f0"
 end
 
 # Style for sublets
 style :sublets do
   padding     0, 0, 0, 0
   border      "#303030", 0
-  foreground  "#757575"
-  background  "#202020"
+  foreground  "#b8b8b8"
+  background  "#f0f0f0"
 end
 
 # Style for separator
 style :separator do
   padding     0, 0, 0, 0
   border      0
-  background  "#202020"
+  background  "#f0f0f0"
   foreground  "#757575"
 end
 
 # Style for active/inactive windows
 style :clients do
-  active      "#303030", 2
-  inactive    "#202020", 2
+  active      "#b8b8b8", 1
+  inactive    "#f0f0f0", 1
   margin      0
 end
 
 # Style for subtle
 style :subtle do
   margin      0, 0, 0, 0
-  panel       "#202020"
+  panel       "#f0f0f0"
   #background  "#3d3d3d"
   stipple     "#757575"
 end
@@ -749,7 +754,7 @@ end
 sublet :clock do
   interval      10
   text_fg "#d81860"
-  icon_fg "#b7ce42"
+  icon_fg "#22303d"
   format_string "%a %m/%d %H:%M"
 end
 
@@ -757,7 +762,7 @@ sublet :wifi do
   interval      30
   #text_fg "#509ec6"
   text_fg "#66aabb"
-  icon_fg "#b7ce42"
+  icon_fg "#22303d"
 end
 
 sublet :temp do
@@ -765,28 +770,28 @@ sublet :temp do
   show_name false
   monitors "acpitz"
   text_fg "#66aabb"
-  icon_fg "#b7ce42"
+  icon_fg "#22303d"
 end
 
 sublet :mpd do
   text_fg "#66aabb"
-  icon_fg "#b7ce42"
+  icon_fg "#22303d"
 end
 
 sublet :memory do
   interval 10
   text_fg "#66aabb"
-  icon_fg "#b7ce42"
+  icon_fg "#22303d"
 end
 
 sublet :volume do
-  icon_fg "#b7ce42"
+  icon_fg "#22303d"
 end
 
 sublet :battery do
   interval 10
   text_fg "#66aabb"
-  icon_fg "#b7ce42"
+  icon_fg "#22303d"
 end
 #
 #  === Link

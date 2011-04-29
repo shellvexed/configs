@@ -19,8 +19,8 @@ Xft.hinting:		true
 !URxvt.boldFont:xft:ProggySmallTT:pixelsize=16
 !URxvt.font:xft:ProggyCleanTT:pixelsize=16
 !URxvt.boldFont:xft:ProggyCleanTT:pixelsize=16
-URxvt.font:xft:Inconsolata:hintstyle=hintslight:autohint=true:pixelsize=13
-URxvt.boldFont:xft:Inconsolata:hintstyle=hintslight:autohint=true:pixelsize=13
+URxvt.font:xft:Inconsolata:hintstyle=hintslight:autohint=true:pixelsize=14
+URxvt.boldFont:xft:Inconsolata:hintstyle=hintslight:autohint=true:pixelsize=14
 !URxvt.font:xft:Envy Code R:hintstyle=hintfull:pixelsize=12
 !URxvt.boldFont:xft:Envy Code R:hintstyle=hintfull:pixelsize=12
 !URxvt.font:xft:DejaVu Sans Mono:pixelsize=10.5
@@ -41,7 +41,7 @@ URxvt.tintColor:	#000000
 URxvt.shading:		60
 
 !-[colors]----
-URxvt.cursorColor: #DCDCCC
+URxvt.cursorColor: #666666
 
 !!*foreground: #DDEEDD
 !!*background: #202020
@@ -81,7 +81,7 @@ URxvt*color8:    #666666
 URxvt*color1:    #6dacd8
 URxvt*color9:    #62aada
 ! green
-!URxvt*color2:    #315b81
+URxvt*color2:    #315b81
 URxvt*color10:    #477ea7
 ! yellow
 URxvt*color3:    #4282b0
