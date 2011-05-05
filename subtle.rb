@@ -46,6 +46,9 @@ set :urgent, false
 # Honor resize size hints globally
 set :resize, false
 
+# Enable gravity tiling
+set :tiling, true
+
 # Font string either take from e.g. xfontsel or use xft
 #set :font, "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*"
 set :font, "xft:clean:pixelsize=10"
@@ -54,7 +57,7 @@ set :font, "xft:clean:pixelsize=10"
 set :separator, "|"
 
 # Set the WM_NAME of subtle (Java quirk)
-set :wmname, "LG3D"
+#set :wmname, "LG3D"
 
 #
 # == Screen
@@ -128,26 +131,23 @@ end
 
 # Style for focus window title
 style :title do
-  padding     0, 0, 0, 0
+  padding     1, 3
   border      "#303030", 0
-  #foreground  "#b8b8b8"
   foreground  "#22303d"
-  #background  "#202020"
   background  "#f0f0f0"
 end
 
 # Style for the active views
 style :focus do
-  padding     0, 0, 0, 0
+  padding     1, 2
   border      "#757575", 0
-  #foreground  "#fecf35"
-  foreground  "#62aada"
+  foreground  "#477ea7"
   background  "#f0f0f0"
 end
 
 # Style for urgent window titles and views
 style :urgent do
-  padding     0, 0, 0, 0
+  padding     1, 2
   border      "#303030", 0
   foreground  "#ff9800"
   background  "#f0f0f0"
@@ -155,25 +155,23 @@ end
 
 # Style for occupied views (views with clients)
 style :occupied do
-  padding     0, 0, 0, 0
+  padding     1, 2
   border      "#303030", 0
-  #foreground  "#b8b8b8"
   foreground  "#22303d"
   background  "#f0f0f0"
 end
 
 # Style for view buttons
 style :views do
-  padding     0, 0, 0, 0
+  padding     1, 2
   border      "#303030", 0
-  #foreground  "#757575"
   foreground  "#b8b8b8"
   background  "#f0f0f0"
 end
 
 # Style for sublets
 style :sublets do
-  padding     0, 0, 0, 0
+  padding     1, 0
   border      "#303030", 0
   foreground  "#b8b8b8"
   background  "#f0f0f0"
@@ -181,7 +179,7 @@ end
 
 # Style for separator
 style :separator do
-  padding     0, 0, 0, 0
+  padding     1, 3
   border      0
   background  "#f0f0f0"
   foreground  "#757575"
@@ -192,6 +190,7 @@ style :clients do
   active      "#b8b8b8", 1
   inactive    "#f0f0f0", 1
   margin      0
+  width       50
 end
 
 # Style for subtle
@@ -353,12 +352,16 @@ grab "W-S-1", :ViewJump1
 grab "W-S-2", :ViewJump2
 grab "W-S-3", :ViewJump3
 grab "W-S-4", :ViewJump4
+grab "W-S-5", :ViewJump5
+grab "W-S-6", :ViewJump6
 
 # Switch current view
 grab "W-1", :ViewSwitch1
 grab "W-2", :ViewSwitch2
 grab "W-3", :ViewSwitch3
 grab "W-4", :ViewSwitch4
+grab "W-5", :ViewSwitch5
+grab "W-6", :ViewSwitch6
 
 # Select next and prev view */
 grab "KP_Add",      :ViewNext
@@ -369,6 +372,8 @@ grab "W-A-1", :ScreenJump1
 grab "W-A-2", :ScreenJump2
 grab "W-A-3", :ScreenJump3
 grab "W-A-4", :ScreenJump4
+grab "W-A-5", :ScreenJump5
+grab "W-A-6", :ScreenJump6
 
 # Force reload of config and sublets
 grab "W-C-r", :SubtleReload
@@ -579,27 +584,29 @@ end
 # Simple tags
 tag "terms",   "xterm|[u]?rxvt"
 tag "browser", "uzbl|opera|firefox|navigator|jumanji"
-tag "editors", "emacs"
+tag "editors", "emacs|gvim"
+tag "pictures", "feh"
 
 # Placement
-tag "editor" do
-  match  "[g]?vim"
+tag "filemanager" do
+  match  "thunar"
+  geometry [ 10, 10, 800, 700 ]
   resize true
 end
 
-tag "fixed" do
-  geometry [ 10, 10, 100, 100 ]
-  stick    true
-end
+#tag "fixed" do
+#  geometry [ 10, 10, 100, 100 ]
+#  stick    true
+#end
 
 tag "resize" do
   match  "sakura|gvim"
   resize true
 end
 
-tag "gravity" do
-  gravity :center
-end
+#tag "gravity" do
+#  gravity :center
+#end
 
 # Modes
 tag "stick" do
@@ -614,20 +621,20 @@ tag "float" do
 end
 
 # Gimp
-tag "gimp_image" do
-  match   :role => "gimp-image-window"
-  gravity :gimp_image
-end
+#tag "gimp_image" do
+#  match   :role => "gimp-image-window"
+#  gravity :gimp_image
+#end
 
-tag "gimp_toolbox" do
-  match   :role => "gimp-toolbox$"
-  gravity :gimp_toolbox
-end
+#tag "gimp_toolbox" do
+#  match   :role => "gimp-toolbox$"
+#  gravity :gimp_toolbox
+#end
 
-tag "gimp_dock" do
-  match   :role => "gimp-dock"
-  gravity :gimp_dock
-end
+#tag "gimp_dock" do
+#  match   :role => "gimp-dock"
+#  gravity :gimp_dock
+#end
 
 #
 # == Views
@@ -702,6 +709,18 @@ view "www" do
   icon_only true
 end
 
+view "FM" do
+  match "filemanager"
+  icon "/home/ethan/.local/share/subtle/icons/shelf.xbm"
+  icon_only true
+end
+
+view "pictures" do
+  match "pictures"
+  icon "/home/ethan/.local/share/subtle/icons/wand.xbm"
+  icon_only true
+end
+
 view "dev" do
   match "editors"
   icon "/home/ethan/.local/share/subtle/icons/wrench.xbm"
@@ -761,7 +780,7 @@ end
 sublet :wifi do
   interval      30
   #text_fg "#509ec6"
-  text_fg "#66aabb"
+  text_fg "#477ea7"
   icon_fg "#22303d"
 end
 
@@ -769,18 +788,18 @@ sublet :temp do
   interval 10
   show_name false
   monitors "acpitz"
-  text_fg "#66aabb"
+  text_fg "#477ea7"
   icon_fg "#22303d"
 end
 
 sublet :mpd do
-  text_fg "#66aabb"
+  text_fg "#477ea7"
   icon_fg "#22303d"
 end
 
 sublet :memory do
   interval 10
-  text_fg "#66aabb"
+  text_fg "#477ea7"
   icon_fg "#22303d"
 end
 
@@ -788,11 +807,6 @@ sublet :volume do
   icon_fg "#22303d"
 end
 
-sublet :battery do
-  interval 10
-  text_fg "#66aabb"
-  icon_fg "#22303d"
-end
 #
 #  === Link
 #
