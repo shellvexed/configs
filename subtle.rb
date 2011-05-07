@@ -583,8 +583,8 @@ end
 
 # Simple tags
 tag "terms",   "xterm|[u]?rxvt"
-tag "browser", "uzbl|opera|firefox|navigator|jumanji"
-tag "editors", "emacs|gvim"
+#tag "browser", "uzbl|opera|firefox|navigator|jumanji"
+#tag "editors", "emacs|gvim"
 tag "pictures", "feh"
 
 # Placement
@@ -594,14 +594,20 @@ tag "filemanager" do
   resize true
 end
 
+tag "browser" do
+  match "uzbl|opera|firefox|navigator|jumanji"
+  resize true
+end
+
 #tag "fixed" do
 #  geometry [ 10, 10, 100, 100 ]
 #  stick    true
 #end
 
-tag "resize" do
-  match  "sakura|gvim"
+tag "editors" do
+  match  "sakura|gvim|emacs|lxappearance"
   resize true
+  float true
 end
 
 #tag "gravity" do
@@ -609,16 +615,16 @@ end
 #end
 
 # Modes
-tag "stick" do
-  match "mplayer"
-  float true
-  stick true
-end
+#tag "stick" do
+#  match "mplayer"
+#  float true
+#  stick true
+#end
 
-tag "float" do
-  match "display"
-  float true
-end
+#tag "float" do
+#  match "display"
+#  float true
+#end
 
 # Gimp
 #tag "gimp_image" do
@@ -709,6 +715,12 @@ view "www" do
   icon_only true
 end
 
+view "dev" do
+  match "editors"
+  icon "/home/ethan/.local/share/subtle/icons/wrench.xbm"
+  icon_only true
+end
+
 view "FM" do
   match "filemanager"
   icon "/home/ethan/.local/share/subtle/icons/shelf.xbm"
@@ -718,12 +730,6 @@ end
 view "pictures" do
   match "pictures"
   icon "/home/ethan/.local/share/subtle/icons/wand.xbm"
-  icon_only true
-end
-
-view "dev" do
-  match "editors"
-  icon "/home/ethan/.local/share/subtle/icons/wrench.xbm"
   icon_only true
 end
 
