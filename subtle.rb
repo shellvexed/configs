@@ -54,7 +54,7 @@ set :tiling, true
 set :font, "xft:clean:pixelsize=10"
 
 # Separator between sublets
-set :separator, "|"
+set :separator, "]["
 
 # Set the WM_NAME of subtle (Java quirk)
 #set :wmname, "LG3D"
@@ -107,7 +107,7 @@ set :separator, "|"
 icon = Subtlext::Icon.new("/home/ethan/.local/share/subtle/icons/arrow_right2.xbm")
 
 screen 1 do
-  top    [ :views, :title, :spacer, :keychain, :spacer, :mpd, icon, :volume, icon, :temp, icon,  :memory, icon, :wifi, icon, :clock, :tray, ]
+  top    [ :views, :title, :spacer, :keychain, :spacer, :sublets, :mpd, icon, :volume, icon, :temp, icon,  :memory, icon, :wifi, icon, :clock, :tray, ]
   bottom [ ]
 end
 
@@ -182,7 +182,7 @@ style :separator do
   padding     1, 3
   border      0
   background  "#f0f0f0"
-  foreground  "#757575"
+  foreground  "#b8b8b8"
 end
 
 # Style for active/inactive windows
@@ -585,13 +585,17 @@ end
 tag "terms",   "xterm|[u]?rxvt"
 #tag "browser", "uzbl|opera|firefox|navigator|jumanji"
 #tag "editors", "emacs|gvim"
-tag "pictures", "feh"
 
-# Placement
-tag "filemanager" do
-  match  "thunar"
-  geometry [ 10, 10, 800, 700 ]
+tag "files" do
+  match "feh|xpdf"
   resize true
+end
+
+tag "filemanager" do
+  match  "thunar|exo-helper-1"
+  #geometry [ 10, 10, 800, 700 ]
+  resize true
+  #float true
 end
 
 tag "browser" do
@@ -607,7 +611,7 @@ end
 tag "editors" do
   match  "sakura|gvim|emacs|lxappearance"
   resize true
-  float true
+  #float true
 end
 
 #tag "gravity" do
@@ -727,9 +731,9 @@ view "FM" do
   icon_only true
 end
 
-view "pictures" do
-  match "pictures"
-  icon "/home/ethan/.local/share/subtle/icons/wand.xbm"
+view "files" do
+  match "files"
+  icon "/home/ethan/.local/share/subtle/icons/file1.xbm"
   icon_only true
 end
 
