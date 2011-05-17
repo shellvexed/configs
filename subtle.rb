@@ -149,7 +149,7 @@ end
 style :urgent do
   padding     1, 2
   border      "#303030", 0
-  foreground  "#ff9800"
+  foreground  "#b8b8b8"
   background  "#f0f0f0"
 end
 
@@ -157,7 +157,7 @@ end
 style :occupied do
   padding     1, 2
   border      "#303030", 0
-  foreground  "#22303d"
+  foreground  "#000000"
   background  "#f0f0f0"
 end
 
@@ -235,44 +235,44 @@ gravity :top66,          [   0,   0, 100,  66 ]
 gravity :top33,          [   0,   0, 100,  34 ]
 
   # Top right
-gravity :top_right,      [ 100,   0,  50,  50 ]
-gravity :top_right66,    [ 100,   0,  50,  66 ]
-gravity :top_right33,    [ 100,   0,  50,  34 ]
+gravity :top_right,      [  50,   0,  50,  50 ]
+gravity :top_right66,    [  50,   0,  50,  66 ]
+gravity :top_right33,    [  50,   0,  50,  33 ]
 
   # Left
 gravity :left,           [   0,   0,  50, 100 ]
-gravity :left66,         [   0,  50,  50,  34 ]
-gravity :left33,         [   0,  50,  25,  34 ]
+gravity :left66,         [   0,   0,  66, 100 ]
+gravity :left33,         [   0,   0,  33, 100 ]
 
   # Center
 gravity :center,         [   0,   0, 100, 100 ]
-gravity :center66,       [   0,  50, 100,  34 ]
-gravity :center33,       [  50,  50,  50,  34 ]
+gravity :center66,       [  17,  17,  66,  66 ]
+gravity :center33,       [  33,  33,  33,  33 ]
 
   # Right
-gravity :right,          [ 100,   0,  50, 100 ]
-gravity :right66,        [ 100,  50,  50,  34 ]
-gravity :right33,        [ 100,  50,  25,  34 ]
+gravity :right,          [  50,  0,  50,  100 ]
+gravity :right66,        [  34,  0,  66,  100 ]
+gravity :right33,        [  67, 50,  33,  100 ]
 
   # Bottom left
-gravity :bottom_left,    [   0, 100,  50,  50 ]
-gravity :bottom_left66,  [   0, 100,  50,  66 ]
-gravity :bottom_left33,  [   0, 100,  50,  34 ]
+gravity :bottom_left,    [   0,  50,  50,  50 ]
+gravity :bottom_left66,  [   0,  34,  50,  66 ]
+gravity :bottom_left33,  [   0,  67,  50,  33 ]
 
   # Bottom
-gravity :bottom,         [   0, 100, 100,  50 ]
-gravity :bottom66,       [   0, 100, 100,  66 ]
-gravity :bottom33,       [   0, 100, 100,  34 ]
+gravity :bottom,         [   0,  50, 100,  50 ]
+gravity :bottom66,       [   0,  34, 100,  66 ]
+gravity :bottom33,       [   0,  67, 100,  33 ]
 
   # Bottom right
-gravity :bottom_right,   [ 100, 100,  50,  50 ]
-gravity :bottom_right66, [ 100, 100,  50,  66 ]
-gravity :bottom_right33, [ 100, 100,  50,  34 ]
+gravity :bottom_right,   [ 50, 50,  50,  50 ]
+gravity :bottom_right66, [ 50, 34,  50,  66 ]
+gravity :bottom_right33, [ 50, 67,  50,  33 ]
 
   # Gimp
-gravity :gimp_image,     [  50,  50,  80, 100 ]
-gravity :gimp_toolbox,   [   0,   0,  10, 100 ]
-gravity :gimp_dock,      [ 100,   0,  10, 100 ]
+gravity :gimp_image,     [  50,  50,  50, 50 ]
+gravity :gimp_toolbox,   [  50,  34,  50, 66 ]
+gravity :gimp_dock,      [  50,  67,  50, 33 ]
 
 #
 # == Grabs
