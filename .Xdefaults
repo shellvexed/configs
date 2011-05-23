@@ -19,12 +19,12 @@ Xft.hinting:		true
 !URxvt.boldFont:xft:ProggySmallTT:pixelsize=16
 !URxvt.font:xft:ProggyCleanTT:pixelsize=16
 !URxvt.boldFont:xft:ProggyCleanTT:pixelsize=16
-URxvt.font:xft:Inconsolata:hintstyle=hintslight:autohint=true:pixelsize=14
-URxvt.boldFont:xft:Inconsolata:hintstyle=hintslight:autohint=true:pixelsize=14
+!URxvt.font:xft:Inconsolata:hintstyle=hintslight:autohint=true:pixelsize=13
+!URxvt.boldFont:xft:Inconsolata:hintstyle=hintslight:autohint=true:pixelsize=13
 !URxvt.font:xft:Envy Code R:hintstyle=hintfull:pixelsize=12
 !URxvt.boldFont:xft:Envy Code R:hintstyle=hintfull:pixelsize=12
-!URxvt.font:xft:DejaVu Sans Mono:pixelsize=10.5
-!URxvt.boldFont:xft:DejaVu Sans Mono:pixelsize=10.5
+URxvt.font:xft:DejaVu Sans Mono:pixelsize=10.5
+URxvt.boldFont:xft:DejaVu Sans Mono:pixelsize=10.5
 !URxvt.font:xft:Tamsyn:pixelsize=14
 !URxvt.boldFont:xft:Tamsyn:pixelsize=14
 
@@ -71,30 +71,57 @@ URxvt.cursorColor: #666666
 !*color7: #DDEEDD
 !*color15: #EFEFEF
 
-! Light
-URxvt*background: #f0f0f0
-URxvt*foreground: #22303d
+!-- Light --!
+!URxvt*background: #f0f0f0
+!URxvt*foreground: #22303d
 ! black
-URxvt*color0:    #cbd9e2
-URxvt*color8:    #666666
+!URxvt*color0:    #cbd9e2
+!URxvt*color8:    #666666
 ! red
-URxvt*color1:    #6dacd8
-URxvt*color9:    #62aada
+!URxvt*color1:    #6dacd8
+!URxvt*color9:    #62aada
 ! green
-URxvt*color2:    #315b81
-URxvt*color10:    #477ea7
+!URxvt*color2:    #315b81
+!URxvt*color10:    #477ea7
 ! yellow
-URxvt*color3:    #4282b0
-URxvt*color11:    #62aada
+!URxvt*color3:    #4282b0
+!URxvt*color11:    #62aada
 ! blue
-URxvt*color4:    #315b81
-URxvt*color12:    #477ea7
+!URxvt*color4:    #315b81
+!URxvt*color12:    #477ea7
 ! magenta
-URxvt*color5:    #4282b0
-URxvt*color13:    #62aada
+!URxvt*color5:    #4282b0
+!URxvt*color13:    #62aada
 ! cyan
-URxvt*color6:    #315b81
-URxvt*color14:    #477ea7
+!URxvt*color6:    #315b81
+!URxvt*color14:    #477ea7
 ! white
-URxvt*color7:    #22303d
-URxvt*color15:    #444444
+!URxvt*color7:    #22303d
+!URxvt*color15:    #444444
+
+*foreground: #9a9a9a
+*background: #151515
+!black
+*color0: #1f1f1f
+*color8: #808080
+!red
+*color1: #c14c2e
+*color9: #d92918
+!green
+*color2: #bdf271
+*color10: #ffffa6
+!yellow
+*color3: #ff8939
+*color11: #ffc051
+!blue
+*color4: #5d6aa6
+*color12: #d1d7f2
+!magenta
+*color5: #b52841
+*color13: #d9042b
+!cyan
+*color6: #435d65
+*color14: #6e98a4
+!white
+*color7: #cccccc
+*color15: #cccccc
