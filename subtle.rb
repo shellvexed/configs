@@ -587,15 +587,15 @@ tag "terms",   "xterm|[u]?rxvt"
 #tag "editors", "emacs|gvim"
 
 tag "files" do
-  match "feh|xpdf"
+  match "feh|xpdf|thunar|exo-helper-1"
   resize true
 end
 
-tag "filemanager" do
-  match  "thunar|exo-helper-1"
+tag "debugger" do
+  match  "Ddd"
   #geometry [ 10, 10, 800, 700 ]
   resize true
-  #float true
+  float true
 end
 
 tag "browser" do
@@ -610,7 +610,7 @@ end
 
 tag "editors" do
   match  "sakura|gvim|emacs|lxappearance"
-  resize true
+  resize false
   #float true
 end
 
@@ -725,9 +725,9 @@ view "dev" do
   icon_only true
 end
 
-view "FM" do
-  match "filemanager"
-  icon "/home/ethan/.local/share/subtle/icons/shelf.xbm"
+view "debug" do
+  match "debugger"
+  icon "/home/ethan/.local/share/subtle/icons/bug.xbm"
   icon_only true
 end
 
