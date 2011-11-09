@@ -19,14 +19,11 @@
 #
 begin
   require "#{ENV["HOME"]}/.subtle-contrib/ruby/launcher.rb"
-  require "#{ENV["HOME"]}/.subtle-contrib/ruby/merger.rb"
 
   Subtle::Contrib::Launcher.fonts = [
     "xft:Inconsolata:pixelsize=80",
     "xft:Envy Code R:pixelsize=13"
   ]
-
-  Subtle::Contrib::Merger.font = "xft:Envy Code R:pixelsize=13"
 rescue LoadError
 end
 
@@ -438,10 +435,6 @@ grab "A-S-d" do
   Subtle::Contrib::Launcher.run
 end
 
-grab "C-u" do
-  Subtle::Contrib::Merger.run
-end
-
 # Run Ruby lambdas
 grab "S-F2" do |c|
   puts c.name
@@ -631,7 +624,7 @@ end
 #end
 
 tag "editors" do
-  match  "sakura|gvim|emacs|lxappearance"
+  match  "sakura|gvim|emacs|lxappearance|gnumeric"
   resize false
   #float true
 end
@@ -781,11 +774,9 @@ style :sublets do
   end
   style :mpd do
     foreground  "#2e2e2e"
-  #  icon        "#848484"
   end
   style :memory do
     foreground  "#2e2e2e"
-  #  icon        "#848484"
   end
   style :volume do
     icon        "#2e2e2e"
