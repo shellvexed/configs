@@ -1,0 +1,20 @@
+
+# settings
+set homepage http://www.google.com
+set auto_save 60
+
+# key bindings
+map <C-q> quit
+
+# font
+set font Ubuntu Light 10
+
+# Enable plugins
+plugin application/x-shockwave-flash
+
+# Search engines
+searchengine g http://www.google.com/search?q=%s
+
+# scripts
+script ~/.config/jumanji/scripts/hints.js
+
