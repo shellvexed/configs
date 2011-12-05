@@ -1,0 +1,128 @@
+!--------------------
+!-[Xdefaults file]
+!--------------------
+
+!-[Font Rendering]-----
+Xft.dpi:          99
+Xft.lcdfilter:		lcdslight
+Xft.antialias:	   true
+Xft.rgba:         rgb
+Xft.hinting:		true
+!Xft.hintstyle:    hintslight
+
+!-[Fonts]----
+!URxvt.font:xft:terminus:pixelsize=10:antialias=false
+!URxvt.boldFont:xft:terminus:bold:pixelsize=10:antialias=false
+!URxvt.font: xft:ProFontWindows:size=9:antialias=false
+!URxvt.boldFont: xft:ProFontWindows:size=9:antialias=false
+!URxvt.font:xft:ProggySmallTT:pixelsize=16
+!URxvt.boldFont:xft:ProggySmallTT:pixelsize=16
+!URxvt.font:xft:ProggyCleanTT:pixelsize=16
+!URxvt.boldFont:xft:ProggyCleanTT:pixelsize=16
+!URxvt.font:xft:Inconsolata:hintstyle=hintslight:autohint=false:pixelsize=13
+!URxvt.boldFont:xft:Inconsolata:hintstyle=hintslight:autohint=false:pixelsize=13
+!URxvt.font:xft:Envy Code R:hintstyle=hintfull:pixelsize=12
+!URxvt.boldFont:xft:Envy Code R:hintstyle=hintfull:pixelsize=12
+!URxvt.font:xft:Droid Sans Mono:pixelsize=12
+!URxvt.boldFont:xft:Droid Sans Mono:pixelsize=12
+URxvt.font:xft:DejaVu Sans Mono:autohint=true:pixelsize=11
+URxvt.boldFont:xft:DejaVu Sans Mono:Book:autohint=true:pixelsize=11
+
+!-[URxvt Settings]----
+URxvt.saveLines:	8192
+URxvt.scrollBar:	false
+URxvt.perl-ext-common:  default,matcher
+URxvt.urlLauncher:	/usr/bin/firefox
+URxvt.matcher.button:	1
+URxvt.underlineColor:   yellow
+URxvt.geometry:		80x36
+URxvt.transparent: 	false
+URxvt.tintColor:	#000000
+URxvt.shading:		60
+
+!-[colors]----
+URxvt.cursorColor: #666666
+
+!!*foreground: #DDEEDD
+!!*background: #202020
+!*background: #1C1C1C
+!black
+!*color0: #1C1C1C
+!*color8: #4d4d4d
+!red
+!*color1: #D81860
+!*color9: #F00060
+!green
+!*color2: #B7CE42
+!*color10: #BDE077
+!yellow
+!*color3: #FEA63C
+!*color11: #ffa32c
+!blue
+!*color4: #66AABB
+!*color12: #509ec6
+!magenta
+!*color5: #B7416E
+!*color13: #BB4466
+!cyan
+!*color6: #5E7175
+!*color14: #526164
+!white
+!*color7: #DDEEDD
+!*color15: #EFEFEF
+
+!-- Light --!
+!URxvt*background: #f0f0f0
+!URxvt*foreground: #22303d
+! black
+!URxvt*color0:    #cbd9e2
+!URxvt*color8:    #666666
+! red
+!URxvt*color1:    #6dacd8
+!URxvt*color9:    #62aada
+! green
+!URxvt*color2:    #315b81
+!URxvt*color10:    #477ea7
+! yellow
+!URxvt*color3:    #4282b0
+!URxvt*color11:    #62aada
+! blue
+!URxvt*color4:    #315b81
+!URxvt*color12:    #477ea7
+! magenta
+!URxvt*color5:    #4282b0
+!URxvt*color13:    #62aada
+! cyan
+!URxvt*color6:    #315b81
+!URxvt*color14:    #477ea7
+! white
+!URxvt*color7:    #22303d
+!URxvt*color15:    #444444
+
+!*foreground: #9a9a9a
+*foreground: #555555
+*background: #151515
+!black
+*color0: #1f1f1f
+*color8: #808080
+!red
+*color1: #c14c2e
+*color9: #d92918
+!green
+*color2: #bdf271
+*color10: #ffffa6
+!yellow
+*color3: #ff8939
+*color11: #ffc051
+!blue
+*color4: #5d6aa6
+*color12: #d1d7f2
+!magenta
+*color5: #b52841
+*color13: #d9042b
+!cyan
+*color6: #435d65
+*color14: #6e98a4
+!white
+*color7: #cccccc
+*color15: #cccccc
