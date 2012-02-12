@@ -1,4 +1,5 @@
 "  .vimrc
+
 set directory=~/.vim/backup,/tmp
 set number
 set mouse=a
@@ -8,8 +9,8 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-set tabstop=3
-set shiftwidth=3
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set autoindent
 set smartindent
@@ -25,4 +26,4 @@ if $TERM == 'screen'
 endif
 
 filetype plugin indent on
-syntax on
+syntax enable
