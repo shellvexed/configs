@@ -1,0 +1,15 @@
+#!/bin/sh
+LC="$HOME/.scripts/conkyrc_left"
+FG="#555555"
+BG="#151515"
+ALIGN="left"
+WIDTH="400"
+HEIGHT="14"
+#FONT="-*-cure-medium-*-*-*-11-*-*-*-*-*-*-*"
+#FONT="-*-ProggySmallTT-medium-*-*-*-15-*-*-*-*-*-*-*"
+FONT="-*-Terminus-medium-*-*-*-10-*-*-*-*-*-*-*"
+XPOS="200" 
+YPOS="0"
+
+exec conky -d -c $LC | dzen2 -fg $FG -bg $BG -ta $ALIGN -w $WIDTH -h $HEIGHT -x $XPOS -y $YPOS -fn $FONT &
+exit 0
