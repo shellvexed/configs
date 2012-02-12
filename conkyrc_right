@@ -1,7 +1,0 @@
-out_to_console yes
-update_interval 1.0
-total_run_times 0
-use_spacer none
-
-TEXT
-${if_mpd_playing} ^i(/home/ethan/.icons_xbm/headphones.xbm) ${mpd_smart}  ^i(/home/ethan/.icons_xbm/volume_on.xbm) ${mpd_vol}${endif}   ^i(/home/ethan/.icons_xbm/wifi_01.xbm) ${addr wlan0}   ^i(/home/ethan/.icons_xbm/clock.xbm)  ${time %a %D %I:%M%P} 
