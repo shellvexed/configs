@@ -18,7 +18,8 @@
 #define ATTACH_ASIDE    True      /* False means new window is master */
 #define FOLLOW_WINDOW   False     /* follow the window when moved to a different desktop */
 #define FOLLOW_MOUSE    False     /* focus the window the mouse just entered */
-#define CLICK_TO_FOCUS  False     /* focus an unfocused window when clicked  */
+#define CLICK_TO_FOCUS  True      /* focus an unfocused window when clicked  */
+#define FOCUS_BUTTON    Button3   /* mouse button to be used along with CLICK_TO_FOCUS */
 #define BORDER_WIDTH    2         /* window border width */
 #define FOCUS           "#ff950e" /* focused window border color    */
 #define UNFOCUS         "#444444" /* unfocused window border color  */
@@ -49,7 +50,7 @@ static const AppRule rules[] = { \
  */
 static const char *termcmd[]    = { "urxvt",     NULL };
 static const char *menucmd[]    = { "dmenu_run", NULL };
-static const char *browsercmd[] = { "dwb", NULL };
+static const char *browsercmd[] = { "chromium", NULL };
 
 #define DESKTOPCHANGE(K,N) \
     {  MOD1,             K,              change_desktop, {.i = N}}, \
@@ -65,16 +66,16 @@ static Key keys[] = {
     {  MOD4|SHIFT,       XK_c,          killclient,        {NULL}},
     {  MOD4,             XK_j,          next_win,          {NULL}},
     {  MOD4,             XK_k,          prev_win,          {NULL}},
-    {  MOD4,             XK_h,          resize_master,     {.i = -10}}, /* decrease px */
-    {  MOD4,             XK_l,          resize_master,     {.i = +10}}, /* increase px */
-    {  MOD4,             XK_o,          resize_stack,      {.i = -10}}, /* shrink   px */
-    {  MOD4,             XK_p,          resize_stack,      {.i = +10}}, /* grow     px */
+    {  MOD4,             XK_h,          resize_master,     {.i = -10}}, /* decrease size in px */
+    {  MOD4,             XK_l,          resize_master,     {.i = +10}}, /* increase size in px */
+    {  MOD4,             XK_o,          resize_stack,      {.i = -10}}, /* shrink   size in px */
+    {  MOD4,             XK_p,          resize_stack,      {.i = +10}}, /* grow     size in px */
     {  MOD4|CONTROL,     XK_h,          rotate,            {.i = -1}},
     {  MOD4|CONTROL,     XK_l,          rotate,            {.i = +1}},
     {  MOD4|SHIFT,       XK_h,          rotate_filled,     {.i = -1}},
     {  MOD4|SHIFT,       XK_l,          rotate_filled,     {.i = +1}},
     {  MOD4,             XK_Tab,        last_desktop,      {NULL}},
-    {  MOD4|SHIFT,       XK_Return,     swap_master,       {NULL}},
+    {  MOD1|SHIFT,       XK_Return,     swap_master,       {NULL}},
     {  MOD4|SHIFT,       XK_j,          move_down,         {NULL}},
     {  MOD4|SHIFT,       XK_k,          move_up,           {NULL}},
     {  MOD4|SHIFT,       XK_t,          switch_mode,       {.i = TILE}},
@@ -82,13 +83,13 @@ static Key keys[] = {
     {  MOD4|SHIFT,       XK_b,          switch_mode,       {.i = BSTACK}},
     {  MOD4|SHIFT,       XK_g,          switch_mode,       {.i = GRID}},
     {  MOD4|SHIFT,       XK_f,          switch_mode,       {.i = FLOAT}},
-    {  MOD4|CONTROL,     XK_r,          quit,              {.i = 0}}, /* quit value 0 */
-    {  MOD4|CONTROL,     XK_q,          quit,              {.i = 1}}, /* quit value 1 */
+    {  MOD4|CONTROL,     XK_r,          quit,              {.i = 0}}, /* quit with exit value 0 */
+    {  MOD4|CONTROL,     XK_q,          quit,              {.i = 1}}, /* quit with exit value 1 */
     {  MOD4,             XK_c,          spawn,             {.com = termcmd}},
     {  MOD1,             XK_v,          spawn,             {.com = menucmd}},
-    {  MOD4,             XK_Return,     spawn,             {.com = browsercmd}},
-    {  MOD1|CONTROL,     XK_j,          moveresize,        {.v = (int []){   0,  25,   0,   0 }}}, /* move up    */
-    {  MOD1|CONTROL,     XK_k,          moveresize,        {.v = (int []){   0, -25,   0,   0 }}}, /* move down  */
+    {  MOD4|SHIFT,       XK_Return,     spawn,             {.com = browsercmd}},
+    {  MOD1|CONTROL,     XK_j,          moveresize,        {.v = (int []){   0,  25,   0,   0 }}}, /* move down  */
+    {  MOD1|CONTROL,     XK_k,          moveresize,        {.v = (int []){   0, -25,   0,   0 }}}, /* move up    */
     {  MOD1|CONTROL,     XK_l,          moveresize,        {.v = (int []){  25,   0,   0,   0 }}}, /* move right */
     {  MOD1|CONTROL,     XK_h,          moveresize,        {.v = (int []){ -25,   0,   0,   0 }}}, /* move left  */
     {  MOD1|SHIFT,       XK_j,          moveresize,        {.v = (int []){   0,   0,   0,  25 }}}, /* height grow   */
@@ -110,3 +111,5 @@ static Button buttons[] = {
     {  MOD4,    Button3,     spawn,         {.com = menucmd}},
 };
 #endif
+
+/* vim: set expandtab ts=4 sts=4 sw=4 : */
